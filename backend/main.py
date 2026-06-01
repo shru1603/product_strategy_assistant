@@ -3,6 +3,8 @@ import json
 import uuid
 from pathlib import Path
 
+from fastapi.staticfiles import StaticFiles
+
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, StreamingResponse
@@ -213,3 +215,9 @@ def session_status(session_id: str):
     if session_id not in sessions:
         raise HTTPException(status_code=404, detail="Session not found")
     return {"session_id": session_id, "status": sessions[session_id].get("status", "unknown")}
+
+
+# Serve React frontend — must be last so API routes take priority
+_frontend_dist = Path(__file__).parent.parent / "frontend" / "dist"
+if _frontend_dist.exists():
+    app.mount("/", StaticFiles(directory=str(_frontend_dist), html=True), name="static")
