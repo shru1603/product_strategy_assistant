@@ -1,0 +1,304 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 820" width="1020" height="820" font-family="Segoe UI, system-ui, sans-serif">
+
+  <!-- Background -->
+  <rect width="1020" height="820" fill="#F7F8FA"/>
+
+  <!-- Defs: arrowhead markers -->
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#546E7A"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1565C0"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#2E7D32"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#E65100"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="510" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2533">AI Product Strategy Assistant — System Architecture</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LAYER 1: React Frontend -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="30" y="44" width="960" height="80" rx="10" fill="#E3F2FD" stroke="#1565C0" stroke-width="1.8"/>
+  <text x="510" y="65" text-anchor="middle" font-size="13" font-weight="700" fill="#1565C0">React Frontend  (Vite + React 18)</text>
+
+  <!-- Frontend tabs -->
+  <rect x="50"  y="74" width="130" height="38" rx="6" fill="#1565C0"/>
+  <text x="115" y="97" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Dashboard</text>
+  <text x="115" y="108" text-anchor="middle" font-size="9" fill="#90CAF9">KPI + Recharts</text>
+
+  <rect x="196" y="74" width="130" height="38" rx="6" fill="#1565C0"/>
+  <text x="261" y="97" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Insights</text>
+  <text x="261" y="108" text-anchor="middle" font-size="9" fill="#90CAF9">4 agent outputs</text>
+
+  <rect x="342" y="74" width="130" height="38" rx="6" fill="#1565C0"/>
+  <text x="407" y="97" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Strategy</text>
+  <text x="407" y="108" text-anchor="middle" font-size="9" fill="#90CAF9">SWOT + 90-day</text>
+
+  <rect x="488" y="74" width="130" height="38" rx="6" fill="#1565C0"/>
+  <text x="553" y="97" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Chat</text>
+  <text x="553" y="108" text-anchor="middle" font-size="9" fill="#90CAF9">Persistent Q&amp;A</text>
+
+  <rect x="634" y="74" width="130" height="38" rx="6" fill="#1565C0"/>
+  <text x="699" y="97" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Report</text>
+  <text x="699" y="108" text-anchor="middle" font-size="9" fill="#90CAF9">PDF download</text>
+
+  <!-- Sidebar box -->
+  <rect x="780" y="74" width="198" height="38" rx="6" fill="#0D1B2A"/>
+  <text x="879" y="93" text-anchor="middle" font-size="10" font-weight="600" fill="#90CAF9">Sidebar</text>
+  <text x="879" y="106" text-anchor="middle" font-size="9" fill="#546E7A">Upload · Existing Files · Pipeline</text>
+
+  <!-- Arrow: Frontend → FastAPI -->
+  <line x1="510" y1="124" x2="510" y2="147" stroke="#546E7A" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="520" y="140" font-size="9" fill="#78909C">HTTP / SSE</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LAYER 2: FastAPI Backend -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="30" y="148" width="960" height="82" rx="10" fill="#FFF8E1" stroke="#F57F17" stroke-width="1.8"/>
+  <text x="510" y="168" text-anchor="middle" font-size="13" font-weight="700" fill="#E65100">FastAPI Backend  (Python / uvicorn)</text>
+
+  <!-- Route chips -->
+  <rect x="48"  y="176" width="148" height="42" rx="5" fill="#fff" stroke="#F57F17" stroke-width="1"/>
+  <text x="122" y="192" text-anchor="middle" font-size="9" font-weight="700" fill="#E65100">POST /api/upload</text>
+  <text x="122" y="204" text-anchor="middle" font-size="8.5" fill="#78909C">save file to /data</text>
+  <text x="122" y="215" text-anchor="middle" font-size="8.5" fill="#78909C">return session_id</text>
+
+  <rect x="204" y="176" width="158" height="42" rx="5" fill="#fff" stroke="#F57F17" stroke-width="1"/>
+  <text x="283" y="192" text-anchor="middle" font-size="9" font-weight="700" fill="#E65100">GET /api/load-existing</text>
+  <text x="283" y="204" text-anchor="middle" font-size="8.5" fill="#78909C">list + session from</text>
+  <text x="283" y="215" text-anchor="middle" font-size="8.5" fill="#78909C">existing /data files</text>
+
+  <rect x="370" y="176" width="178" height="42" rx="5" fill="#fff" stroke="#2E7D32" stroke-width="1"/>
+  <text x="459" y="192" text-anchor="middle" font-size="9" font-weight="700" fill="#2E7D32">GET /api/analyze/{id}</text>
+  <text x="459" y="204" text-anchor="middle" font-size="8.5" fill="#78909C">SSE stream → triggers</text>
+  <text x="459" y="215" text-anchor="middle" font-size="8.5" fill="#78909C">LangGraph pipeline</text>
+
+  <rect x="556" y="176" width="148" height="42" rx="5" fill="#fff" stroke="#F57F17" stroke-width="1"/>
+  <text x="630" y="192" text-anchor="middle" font-size="9" font-weight="700" fill="#E65100">POST /api/chat</text>
+  <text x="630" y="204" text-anchor="middle" font-size="8.5" fill="#78909C">ChromaDB search</text>
+  <text x="630" y="215" text-anchor="middle" font-size="8.5" fill="#78909C">+ LLM answer</text>
+
+  <rect x="712" y="176" width="148" height="42" rx="5" fill="#fff" stroke="#F57F17" stroke-width="1"/>
+  <text x="786" y="192" text-anchor="middle" font-size="9" font-weight="700" fill="#E65100">GET /api/report/{id}</text>
+  <text x="786" y="204" text-anchor="middle" font-size="8.5" fill="#78909C">stream PDF</text>
+  <text x="786" y="215" text-anchor="middle" font-size="8.5" fill="#78909C">file download</text>
+
+  <rect x="868" y="176" width="110" height="42" rx="5" fill="#fff" stroke="#F57F17" stroke-width="1"/>
+  <text x="923" y="192" text-anchor="middle" font-size="9" font-weight="700" fill="#E65100">GET /api/results</text>
+  <text x="923" y="204" text-anchor="middle" font-size="8.5" fill="#78909C">GET /api/sessions</text>
+  <text x="923" y="215" text-anchor="middle" font-size="8.5" fill="#78909C">status + result</text>
+
+  <!-- Arrow: FastAPI → LangGraph -->
+  <line x1="280" y1="230" x2="220" y2="268" stroke="#2E7D32" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <text x="215" y="258" font-size="9" fill="#2E7D32">triggers</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LAYER 3 LEFT: LangGraph Pipeline -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="30" y="265" width="390" height="530" rx="10" fill="#E8F5E9" stroke="#2E7D32" stroke-width="1.8"/>
+  <text x="225" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#1B5E20">LangGraph Pipeline  (StateGraph)</text>
+
+  <!-- State box -->
+  <rect x="48" y="294" width="354" height="36" rx="6" fill="#C8E6C9" stroke="#4CAF50" stroke-width="1"/>
+  <text x="225" y="308" text-anchor="middle" font-size="9" font-weight="700" fill="#1B5E20">ProductStrategyState (TypedDict)</text>
+  <text x="225" y="322" text-anchor="middle" font-size="8.5" fill="#388E3C">session_id · uploaded_files · raw_data_summary · customer_insights · sales_analysis · market_opportunities · feature_priorities · strategy · report_status</text>
+
+  <!-- START -->
+  <ellipse cx="225" cy="350" rx="28" ry="13" fill="#1B5E20"/>
+  <text x="225" y="354" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">START</text>
+  <line x1="225" y1="363" x2="225" y2="374" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Node 1: ingest_node -->
+  <rect x="58" y="375" width="334" height="46" rx="8" fill="#fff" stroke="#2E7D32" stroke-width="1.5"/>
+  <rect x="58" y="375" width="8"   height="46" rx="4" fill="#2E7D32"/>
+  <text x="232" y="393" text-anchor="middle" font-size="11" font-weight="700" fill="#1B5E20">ingest_node</text>
+  <text x="232" y="408" text-anchor="middle" font-size="9" fill="#546E7A">pandas.read_csv() → compute summary → ChromaDB.upsert(product_data)</text>
+  <rect x="336" y="381" width="48" height="16" rx="4" fill="#E8F5E9" stroke="#4CAF50" stroke-width="0.8"/>
+  <text x="360" y="393" text-anchor="middle" font-size="8" font-weight="700" fill="#2E7D32">NO LLM</text>
+  <line x1="225" y1="421" x2="225" y2="432" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Node 2: customer_agent -->
+  <rect x="58" y="433" width="334" height="46" rx="8" fill="#fff" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="58" y="433" width="8"   height="46" rx="4" fill="#1565C0"/>
+  <text x="232" y="451" text-anchor="middle" font-size="11" font-weight="700" fill="#0D47A1">customer_agent</text>
+  <text x="232" y="466" text-anchor="middle" font-size="9" fill="#546E7A">ChromaDB.query(reviews) → gpt-4o-mini → sentiment analysis</text>
+  <line x1="225" y1="479" x2="225" y2="490" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Node 3: sales_agent -->
+  <rect x="58" y="491" width="334" height="46" rx="8" fill="#fff" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="58" y="491" width="8"   height="46" rx="4" fill="#1565C0"/>
+  <text x="232" y="509" text-anchor="middle" font-size="11" font-weight="700" fill="#0D47A1">sales_agent</text>
+  <text x="232" y="524" text-anchor="middle" font-size="9" fill="#546E7A">pandas groupby (revenue / margin / ROI) → gpt-4o-mini + charts_data</text>
+  <line x1="225" y1="537" x2="225" y2="548" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Node 4: market_agent -->
+  <rect x="58" y="549" width="334" height="46" rx="8" fill="#fff" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="58" y="549" width="8"   height="46" rx="4" fill="#1565C0"/>
+  <text x="232" y="567" text-anchor="middle" font-size="11" font-weight="700" fill="#0D47A1">market_agent</text>
+  <text x="232" y="582" text-anchor="middle" font-size="9" fill="#546E7A">pandas trends + ChromaDB.query(growth) → gpt-4o-mini opportunities</text>
+  <line x1="225" y1="595" x2="225" y2="606" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Node 5: feature_agent -->
+  <rect x="58" y="607" width="334" height="46" rx="8" fill="#fff" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="58" y="607" width="8"   height="46" rx="4" fill="#1565C0"/>
+  <text x="232" y="625" text-anchor="middle" font-size="11" font-weight="700" fill="#0D47A1">feature_agent</text>
+  <text x="232" y="640" text-anchor="middle" font-size="9" fill="#546E7A">RICE scores (Reach·Impact·Confidence/Effort) → gpt-4o-mini priorities</text>
+  <line x1="225" y1="653" x2="225" y2="664" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Node 6: strategy_agent -->
+  <rect x="58" y="665" width="334" height="46" rx="8" fill="#fff" stroke="#1565C0" stroke-width="1.5"/>
+  <rect x="58" y="665" width="8"   height="46" rx="4" fill="#1565C0"/>
+  <text x="232" y="683" text-anchor="middle" font-size="11" font-weight="700" fill="#0D47A1">strategy_agent</text>
+  <text x="232" y="698" text-anchor="middle" font-size="9" fill="#546E7A">ChromaDB.query(all session outputs) → gpt-4o-mini SWOT + 90-day plan</text>
+  <line x1="225" y1="711" x2="225" y2="722" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- Node 7: report_agent -->
+  <rect x="58" y="723" width="334" height="46" rx="8" fill="#fff" stroke="#2E7D32" stroke-width="1.5"/>
+  <rect x="58" y="723" width="8"   height="46" rx="4" fill="#2E7D32"/>
+  <text x="232" y="741" text-anchor="middle" font-size="11" font-weight="700" fill="#1B5E20">report_agent</text>
+  <text x="232" y="756" text-anchor="middle" font-size="9" fill="#546E7A">ReportLab PDF — 6 sections with markdown rendering</text>
+  <rect x="336" y="729" width="48" height="16" rx="4" fill="#E8F5E9" stroke="#4CAF50" stroke-width="0.8"/>
+  <text x="360" y="741" text-anchor="middle" font-size="8" font-weight="700" fill="#2E7D32">NO LLM</text>
+  <line x1="225" y1="769" x2="225" y2="780" stroke="#2E7D32" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+
+  <!-- END -->
+  <ellipse cx="225" cy="793" rx="28" ry="13" fill="#1B5E20"/>
+  <text x="225" y="797" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">END</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LAYER 3 MIDDLE: ChromaDB -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <rect x="440" y="265" width="270" height="530" rx="10" fill="#FFF3E0" stroke="#E65100" stroke-width="1.8"/>
+  <text x="575" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#BF360C">ChromaDB  (Persistent)</text>
+
+  <!-- Collection 1 -->
+  <rect x="458" y="298" width="234" height="198" rx="8" fill="#fff" stroke="#FF6D00" stroke-width="1.2"/>
+  <rect x="458" y="298" width="234" height="24"  rx="8" fill="#FF6D00"/>
+  <text x="575" y="314" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Collection: product_data</text>
+
+  <text x="575" y="338" text-anchor="middle" font-size="9" font-weight="700" fill="#E65100">Written by ingest_node</text>
+  <text x="575" y="352" text-anchor="middle" font-size="9" fill="#546E7A">• 10 product documents</text>
+  <text x="575" y="365" text-anchor="middle" font-size="9" fill="#546E7A">  (revenue, margin, rating,</text>
+  <text x="575" y="378" text-anchor="middle" font-size="9" fill="#546E7A">   returns, reviews, ROI)</text>
+  <text x="575" y="394" text-anchor="middle" font-size="9" fill="#546E7A">• 5 region documents</text>
+  <text x="575" y="407" text-anchor="middle" font-size="9" fill="#546E7A">• 5 category documents</text>
+  <line x1="468" y1="418" x2="682" y2="418" stroke="#FFE0B2" stroke-width="1"/>
+  <text x="575" y="432" text-anchor="middle" font-size="9" font-weight="700" fill="#E65100">Read by agents</text>
+  <text x="575" y="446" text-anchor="middle" font-size="9" fill="#546E7A">customer_agent · market_agent</text>
+  <text x="575" y="459" text-anchor="middle" font-size="9" fill="#546E7A">strategy_agent</text>
+  <text x="575" y="472" text-anchor="middle" font-size="9" fill="#546E7A">Similarity search (cosine)</text>
+  <text x="575" y="487" text-anchor="middle" font-size="9" fill="#546E7A">embedding: text-embedding-3-small</text>
+
+  <!-- Collection 2 -->
+  <rect x="458" y="510" width="234" height="268" rx="8" fill="#fff" stroke="#FF6D00" stroke-width="1.2"/>
+  <rect x="458" y="510" width="234" height="24"  rx="8" fill="#FF6D00"/>
+  <text x="575" y="526" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">Collection: session_memory</text>
+
+  <text x="575" y="550" text-anchor="middle" font-size="9" font-weight="700" fill="#E65100">Written by each agent</text>
+  <text x="575" y="564" text-anchor="middle" font-size="9" fill="#546E7A">Key pattern: {session_id}_{agent}</text>
+  <text x="575" y="582" text-anchor="middle" font-size="9" fill="#546E7A">• abc123_customer</text>
+  <text x="575" y="595" text-anchor="middle" font-size="9" fill="#546E7A">• abc123_sales</text>
+  <text x="575" y="608" text-anchor="middle" font-size="9" fill="#546E7A">• abc123_market</text>
+  <text x="575" y="621" text-anchor="middle" font-size="9" fill="#546E7A">• abc123_features</text>
+  <text x="575" y="634" text-anchor="middle" font-size="9" fill="#546E7A">• abc123_strategy</text>
+  <line x1="468" y1="648" x2="682" y2="648" stroke="#FFE0B2" stroke-width="1"/>
+  <text x="575" y="663" text-anchor="middle" font-size="9" font-weight="700" fill="#E65100">Read by</text>
+  <text x="575" y="677" text-anchor="middle" font-size="9" fill="#546E7A">feature_agent (customer+market)</text>
+  <text x="575" y="690" text-anchor="middle" font-size="9" fill="#546E7A">strategy_agent (all 4 outputs)</text>
+  <text x="575" y="703" text-anchor="middle" font-size="9" fill="#546E7A">POST /api/chat (semantic search</text>
+  <text x="575" y="716" text-anchor="middle" font-size="9" fill="#546E7A">  filtered by session_id)</text>
+  <text x="575" y="735" text-anchor="middle" font-size="9" fill="#546E7A">embedding: text-embedding-3-small</text>
+  <text x="575" y="750" text-anchor="middle" font-size="9" fill="#546E7A">filter: metadata.session_id = req</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- LAYER 3 RIGHT: Key Gateway + Legend -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- Key Gateway box -->
+  <rect x="730" y="265" width="260" height="198" rx="10" fill="#EDE7F6" stroke="#6A1B9A" stroke-width="1.8"/>
+  <text x="860" y="288" text-anchor="middle" font-size="13" font-weight="700" fill="#4A148C">Key Gateway</text>
+  <text x="860" y="304" text-anchor="middle" font-size="9" fill="#6A1B9A">keygateway.arshnivlabs.com/v1</text>
+
+  <rect x="748" y="314" width="224" height="26" rx="5" fill="#fff" stroke="#CE93D8" stroke-width="1"/>
+  <text x="860" y="331" text-anchor="middle" font-size="10" font-weight="700" fill="#4A148C">api_key = "learner001"</text>
+
+  <text x="860" y="360" text-anchor="middle" font-size="11" font-weight="700" fill="#6A1B9A">Chat Model</text>
+  <rect x="748" y="368" width="224" height="22" rx="5" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1"/>
+  <text x="860" y="383" text-anchor="middle" font-size="10" fill="#4A148C">gpt-4o-mini  (temp 0.3–0.4)</text>
+
+  <text x="860" y="410" text-anchor="middle" font-size="11" font-weight="700" fill="#6A1B9A">Embedding Model</text>
+  <rect x="748" y="418" width="224" height="22" rx="5" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1"/>
+  <text x="860" y="433" text-anchor="middle" font-size="10" fill="#4A148C">text-embedding-3-small  (1536-d)</text>
+
+  <text x="860" y="453" text-anchor="middle" font-size="9" fill="#7B1FA2">httpx.Client(verify=False)</text>
+  <text x="860" y="465" text-anchor="middle" font-size="9" fill="#7B1FA2">OpenAI-compatible API</text>
+
+  <!-- Legend box -->
+  <rect x="730" y="482" width="260" height="200" rx="10" fill="#ECEFF1" stroke="#546E7A" stroke-width="1.5"/>
+  <text x="860" y="502" text-anchor="middle" font-size="12" font-weight="700" fill="#37474F">Legend</text>
+
+  <rect x="748" y="514" width="12" height="12" rx="2" fill="#2E7D32"/>
+  <text x="768" y="525" font-size="10" fill="#37474F">Plain node (no LLM call)</text>
+
+  <rect x="748" y="535" width="12" height="12" rx="2" fill="#1565C0"/>
+  <text x="768" y="546" font-size="10" fill="#37474F">Agent node (calls gpt-4o-mini)</text>
+
+  <line x1="748" y1="562" x2="770" y2="562" stroke="#2E7D32" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="778" y="566" font-size="10" fill="#37474F">Pipeline flow</text>
+
+  <line x1="748" y1="583" x2="770" y2="583" stroke="#1565C0" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-blue)"/>
+  <text x="778" y="587" font-size="10" fill="#37474F">ChromaDB read/write</text>
+
+  <line x1="748" y1="604" x2="770" y2="604" stroke="#E65100" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-orange)"/>
+  <text x="778" y="608" font-size="10" fill="#37474F">LLM / Embedding API call</text>
+
+  <rect x="748" y="620" width="224" height="50" rx="5" fill="#fff" stroke="#B0BEC5" stroke-width="0.8"/>
+  <text x="860" y="636" text-anchor="middle" font-size="9" font-weight="700" fill="#37474F">SSE Stream (EventSource)</text>
+  <text x="860" y="649" text-anchor="middle" font-size="9" fill="#546E7A">Frontend receives one event per</text>
+  <text x="860" y="661" text-anchor="middle" font-size="9" fill="#546E7A">completed node in real time</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- ARROWS: LangGraph ↔ ChromaDB -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+  <!-- ingest → product_data (write) -->
+  <line x1="392" y1="398" x2="456" y2="380" stroke="#2E7D32" stroke-width="1.4" stroke-dasharray="5,3" marker-end="url(#arrow-green)"/>
+  <text x="415" y="385" font-size="8" fill="#2E7D32">index</text>
+
+  <!-- customer → product_data (read) -->
+  <line x1="456" y1="430" x2="392" y2="452" stroke="#1565C0" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-blue)"/>
+  <text x="413" y="444" font-size="8" fill="#1565C0">query</text>
+
+  <!-- customer → session_memory (write) -->
+  <line x1="392" y1="468" x2="456" y2="542" stroke="#1565C0" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-blue)"/>
+  <text x="393" y="515" font-size="8" fill="#1565C0">upsert</text>
+
+  <!-- market → product_data (read) -->
+  <line x1="456" y1="488" x2="392" y2="568" stroke="#1565C0" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-blue)"/>
+
+  <!-- feature reads session_memory -->
+  <line x1="456" y1="620" x2="392" y2="628" stroke="#1565C0" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-blue)"/>
+
+  <!-- strategy reads session_memory -->
+  <line x1="456" y1="660" x2="392" y2="685" stroke="#1565C0" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow-blue)"/>
+
+  <!-- chat → session_memory -->
+  <line x1="630" y1="218" x2="630" y2="510" stroke="#546E7A" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="638" y="420" font-size="8" fill="#546E7A">semantic</text>
+  <text x="638" y="430" font-size="8" fill="#546E7A">search</text>
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- ARROWS: Agents → Key Gateway -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <line x1="392" y1="455" x2="728" y2="370" stroke="#6A1B9A" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <line x1="392" y1="515" x2="728" y2="380" stroke="#6A1B9A" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="600" y="430" font-size="8" fill="#7B1FA2">gpt-4o-mini calls</text>
+
+</svg>
