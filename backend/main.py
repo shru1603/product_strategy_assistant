@@ -37,7 +37,7 @@ NODE_LABELS = {
     "sales_performance":  "Computing sales performance",
     "market_opportunity": "Identifying market opportunities",
     "feature_priority":   "Prioritizing features with RICE",
-    "strategy":           "Generating strategy and SWOT",
+    "strategy_node":      "Generating strategy and SWOT",
     "report":             "Generating PDF report",
 }
 

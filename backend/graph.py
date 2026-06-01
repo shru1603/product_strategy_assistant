@@ -17,7 +17,7 @@ def create_graph():
     builder.add_node("sales_performance", sales_agent)
     builder.add_node("market_opportunity",market_agent)
     builder.add_node("feature_priority",  feature_agent)
-    builder.add_node("strategy",          strategy_agent)
+    builder.add_node("strategy_node",     strategy_agent)
     builder.add_node("report",            report_agent)
 
     builder.add_edge(START,             "ingest")
@@ -25,8 +25,8 @@ def create_graph():
     builder.add_edge("customer_feedback","sales_performance")
     builder.add_edge("sales_performance","market_opportunity")
     builder.add_edge("market_opportunity","feature_priority")
-    builder.add_edge("feature_priority", "strategy")
-    builder.add_edge("strategy",         "report")
+    builder.add_edge("feature_priority", "strategy_node")
+    builder.add_edge("strategy_node",    "report")
     builder.add_edge("report",           END)
 
     return builder.compile()
