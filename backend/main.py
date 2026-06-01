@@ -47,7 +47,7 @@ class ChatRequest(BaseModel):
     question: str
 
 
-@app.get("/")
+@app.get("/health")
 def root():
     return {"status": "ok", "message": "Product Strategy Assistant API is running"}
 
